@@ -1,0 +1,26 @@
+# Logs
+pnpm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+*.prod
+
+# Cypress
+cypress/screenshots
+cypress/videos
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# production
+/build
+/public
+/storybook
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
