@@ -1,16 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { App } from "./App";
+import { GiphyApp } from "./GiphyApp";
 
 // const mockSampleApp = vi.fn();
 // vi.mock("./components/Sample/SampleApp", () => ({
 //   SampleApp: () => mockSampleApp(),
 // }));
 
-render(<App />);
+render(<GiphyApp />);
 
-test("App loads and shows header", () => {
+test("GiphyApp loads and shows header", () => {
   expect(
-    screen.getByRole("heading", { level: 1, name: "App" })
+    screen.getByRole("heading", { level: 1, name: "Find your perfect gif" })
   ).toBeInTheDocument();
   // expect(mockSampleApp).toHaveBeenCalledTimes(1);
 });

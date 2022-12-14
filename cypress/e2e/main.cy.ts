@@ -8,6 +8,9 @@ describe("Renders initial elements", () => {
   it("passes", () => {
     cy.visit("http://localhost:4173/");
 
-    cy.findByRole("heading", { level: 1, name: "App" }).should("exist");
+    cy.findByRole("heading", {
+      level: 1,
+      name: "Find your perfect gif",
+    }).should("exist");
   });
 });

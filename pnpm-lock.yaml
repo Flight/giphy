@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@giphy/js-types': ^4.4.0
   '@storybook/addon-essentials': ^7.0.0-beta.6
   '@storybook/addon-interactions': ^7.0.0-beta.6
   '@storybook/addon-links': ^7.0.0-beta.6
@@ -47,6 +48,7 @@ specifiers:
   prop-types: ^15.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-router-dom: ^6.4.5
   start-server-and-test: ^1.15.2
   storybook: 7.0.0-beta.6
   tailwindcss: ^3.2.4
@@ -59,8 +61,10 @@ dependencies:
   prop-types: 15.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-router-dom: 6.4.5_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
+  '@giphy/js-types': 4.4.0
   '@storybook/addon-essentials': 7.0.0-beta.6_o4scbtliisanygemawej7x2d6i
   '@storybook/addon-interactions': 7.0.0-beta.6_o4scbtliisanygemawej7x2d6i
   '@storybook/addon-links': 7.0.0-beta.6_biqbaboplfbrettd7655fr4n2y
@@ -1713,6 +1717,10 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
+  /@giphy/js-types/4.4.0:
+    resolution: {integrity: sha512-W9G6crS2oqTn7g0RpvYu1l/sna4LnivRTk25jmxdzujOFb9kvQ+VFM/v9RPYV2GIBnzT/maW/EwjFIba9jkflA==}
+    dev: true
+
   /@hapi/hoek/9.3.0:
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
     dev: true
@@ -1929,6 +1937,11 @@ packages:
       config-chain: 1.1.13
     dev: true
 
+  /@remix-run/router/1.0.5:
+    resolution: {integrity: sha512-my0Mycd+jruq/1lQuO5LBB6WTlL/e8DTCYWp44DfMTDcXz8DcTlgF0ISaLsGewt+ctHN+yA8xMq3q/N7uWJPug==}
+    engines: {node: '>=14'}
+    dev: false
+
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
@@ -2078,7 +2091,7 @@ packages:
       '@storybook/components': 7.0.0-beta.6_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-beta.6
       '@storybook/csf-tools': 7.0.0-beta.6
-      '@storybook/mdx2-csf': 0.1.0-next.8
+      '@storybook/mdx2-csf': 1.0.0-next.2
       '@storybook/node-logger': 7.0.0-beta.6
       '@storybook/postinstall': 7.0.0-beta.6
       '@storybook/preview-api': 7.0.0-beta.6
@@ -2408,7 +2421,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.6
       '@storybook/core-common': 7.0.0-beta.6_typescript@4.9.4
       '@storybook/csf-plugin': 7.0.0-beta.6
-      '@storybook/mdx2-csf': 0.1.0-next.8
+      '@storybook/mdx2-csf': 1.0.0-next.2
       '@storybook/node-logger': 7.0.0-beta.6
       '@storybook/preview': 7.0.0-beta.6
       '@storybook/preview-api': 7.0.0-beta.6
@@ -2794,10 +2807,8 @@ packages:
     resolution: {integrity: sha512-lI9ThsiqN4kwrFJB7bCHmbRUzdC1sErRHxVL+lAr0CeajX55+oTikU/0hx9pEmvxzUbwBGjb48qL2tjs3SAKEw==}
     dev: true
 
-  /@storybook/mdx2-csf/0.1.0-next.8:
-    resolution: {integrity: sha512-fl8BxHzkypAaFYjBkbYfiDUy/3bzPaSXsDTCuPTBIVu8CwkVntpFrjSujZH/pgJig8/9P4VdUJw0H+beMXpktg==}
-    dependencies:
-      loader-utils: 2.0.4
+  /@storybook/mdx2-csf/1.0.0-next.2:
+    resolution: {integrity: sha512-Mg6pYKhuuMrzF/DcCI5dEA36jx7156bBnCk9uFInthFrr1sLYlj+HfRMibFa/VdJx8L0Wsf/15cIu3xPWriinA==}
     dev: true
 
   /@storybook/node-logger/7.0.0-beta.6:
@@ -4092,10 +4103,6 @@ packages:
     engines: {node: '>=0.6'}
     dev: true
 
-  /big.js/5.2.2:
-    resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
-    dev: true
-
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
@@ -5162,11 +5169,6 @@ packages:
 
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
-    dev: true
-
-  /emojis-list/3.0.0:
-    resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
-    engines: {node: '>= 4'}
     dev: true
 
   /encodeurl/1.0.2:
@@ -7744,15 +7746,6 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /loader-utils/2.0.4:
-    resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
-    engines: {node: '>=8.9.0'}
-    dependencies:
-      big.js: 5.2.2
-      emojis-list: 3.0.0
-      json5: 2.2.1
-    dev: true
-
   /local-pkg/0.4.2:
     resolution: {integrity: sha512-mlERgSPrbxU3BP4qBqAvvwlgW4MTg78iwJdGGnv7kibKjWcJksrG3t6LB5lXI93wXRDvG4NpUgJFmTG4T6rdrg==}
     engines: {node: '>=14'}
@@ -8941,6 +8934,29 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.4.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-a7HsgikBR0wNfroBHcZUCd9+mLRqZS8R5U1Z1mzLWxFXEkUT3vR1XXmSIVoVpxVX8Bar0nQYYYc9Yipq8dWwAA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.5
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.4.5_react@18.2.0
+    dev: false
+
+  /react-router/6.4.5_react@18.2.0:
+    resolution: {integrity: sha512-1RQJ8bM70YEumHIlNUYc6mFfUDoWa5EgPDenK/fq0bxD8DYpQUi/S6Zoft+9DBrh2xmtg92N5HMAJgGWDhKJ5Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.5
+      react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
