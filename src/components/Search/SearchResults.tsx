@@ -24,8 +24,7 @@ const SearchResults: FC<SearchResultsProps> = ({
   isTrending = false,
   onItemClick,
 }) => (
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  <>
+  <div data-testid="search-results">
     {searchResults instanceof Error ? (
       <p className="text-neutral text-center mt-4">
         Something went wrong, please try again later.
@@ -50,7 +49,7 @@ const SearchResults: FC<SearchResultsProps> = ({
                       src={item.images.fixed_height.webp}
                       width={item.images.fixed_height.width}
                       height={item.images.fixed_height.height}
-                      alt={item.alt_text}
+                      alt={item.title}
                       className="inline rounded"
                       loading="lazy"
                     />
@@ -61,7 +60,7 @@ const SearchResults: FC<SearchResultsProps> = ({
         )}
       </>
     )}
-  </>
+  </div>
 );
 
 export { SearchResults };
