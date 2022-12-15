@@ -65,3 +65,4 @@ const SearchResults: FC<SearchResultsProps> = ({
 );
 
 export { SearchResults };
+export type { SearchResultsProps };

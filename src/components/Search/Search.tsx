@@ -9,7 +9,6 @@ interface SearchProps {
   searchQuery: string | undefined;
   onSearchQueryChange: (query: string) => void;
   searchResults: IGif[] | Error | undefined;
-  isTrending: boolean;
 }
 
 /**
@@ -31,7 +30,6 @@ const Search: FC<SearchProps> = ({
   searchQuery,
   onSearchQueryChange,
   searchResults,
-  isTrending,
 }) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [selectedGif, setSelectedGif] = useState<IGif>();
@@ -80,7 +78,7 @@ const Search: FC<SearchProps> = ({
           ) : (
             <SearchResults
               searchResults={searchResults}
-              isTrending={isTrending}
+              isTrending={searchQuery?.length === 0}
               onItemClick={showGifInfo}
             />
           )}
@@ -94,3 +92,4 @@ const Search: FC<SearchProps> = ({
 };
 
 export { Search };
+export type { SearchProps };

@@ -85,3 +85,4 @@ const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
 );
 
 export { GifInfoModal };
+export type { GifInfoModalProps };

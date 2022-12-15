@@ -63,7 +63,6 @@ const SearchApp: FC = () => {
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query)}
       searchResults={searchResults}
-      isTrending={searchQuery?.length === 0}
     />
   );
 };
