@@ -12,6 +12,21 @@ interface SearchProps {
   isTrending: boolean;
 }
 
+/**
+ * Main search dummy component.
+ * Renders the search input and the search results.
+ * @example
+ * <Search
+ *   searchQuery="sample_text"
+ *   onSearchQueryChange={(newQuery) => setSearchQuery(newQuery)}
+ *   searchResults={searchResults}
+ *   isTrending={false} />
+ * @param searchQuery The search query string
+ * @param onSearchQueryChange The search query change handler
+ * @param searchResults An array of search results
+ * @param isTrending Boolean to show an additional header
+ * @returns React component
+ */
 const Search: FC<SearchProps> = ({
   searchQuery,
   onSearchQueryChange,

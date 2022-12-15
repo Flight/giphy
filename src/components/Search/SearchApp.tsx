@@ -10,12 +10,13 @@ import { Search } from "./Search";
  * Giphy search app.
  * Renders the search input, gets the response and
  * passing the results to the results component.
+ * @example <SearchApp />
  * @returns React component
  */
 const SearchApp: FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState<string>();
-  const debouncedSearchQuery = useDebounce(searchQuery, 1000);
+  const debouncedSearchQuery = useDebounce(searchQuery);
   const [fetchTrending, fetchSearchResults] = useGiphy();
   const [trending, setTrending] = useState<Error | IGif[]>();
   const [searchResults, setSearchResults] = useState<Error | IGif[]>();

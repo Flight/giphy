@@ -7,6 +7,18 @@ interface SearchResultsProps {
   onItemClick: (item: IGif) => void;
 }
 
+/**
+ * Renders the search search results.
+ * @example
+ * <SearchResults
+ *   searchResults={searchResults}
+ *   isTrending={true}
+ *   onItemClick={showItemInfo} />
+ * @param searchResults An array of search results
+ * @param isTrending Boolean to show an additional header
+ * @param onItemClick The search item click handler
+ * @returns React component
+ */
 const SearchResults: FC<SearchResultsProps> = ({
   searchResults,
   isTrending = false,

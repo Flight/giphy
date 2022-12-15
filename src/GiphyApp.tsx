@@ -16,6 +16,11 @@ const router = createBrowserRouter([
   },
 ]);
 
+/**
+ * Main Giphy App entry point
+ * @example <GiphyApp />
+ * @returns React component
+ */
 const GiphyApp = () => (
   <div className="container mx-auto max-w-5xl p-5">
     <h1 className="text-3xl font-bold pb-5 text-center text-neutral">

@@ -77,5 +77,9 @@ Pre-commit checks
 
 ## Next steps
 
+- Add tags autocomplete
+- Add endless scrolling
+- Add caching of the search results to the local storage
+- Improve test coverage
 - Improve the error handling and connect the [TrackJS](https://trackjs.com) or [Sentry IO](http://sentry.io)
 - Set up CI / CD process. For example, using (GitHub Actions)[https://github.com/features/actions] or [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/)

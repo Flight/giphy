@@ -5,7 +5,17 @@ interface GifInfoModalProps {
   gif: IGif;
   onClose: () => void;
 }
-
+/**
+ * The modal with the info about the gif and
+ * the fields to copy the urls to the different variants
+ * @example
+ * <GifInfoModal
+ *   gif={gif}
+ *   onClose={() => {setIsModalOpen(false)}} />
+ * @param gif The giphy gif object
+ * @param onClose Modal close handler
+ * @returns React component
+ */
 const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
   <>
     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
