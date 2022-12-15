@@ -20,14 +20,14 @@ const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
       key={gif.id}
     >
       <div className="modal-box relative">
-        <h3 className="text-lg font-bold text-center">{gif.title}</h3>
+        <h2 className="text-lg font-bold text-center">{gif.title}</h2>
         <div className="py-4">
           <img
             src={gif.images.original.webp}
             width={gif.images.original.width}
             height={gif.images.original.height}
             alt={gif.alt_text}
-            className="block mx-auto max-w-full"
+            className="block mx-auto max-w-full rounded"
           />
 
           <div className="flex items-center mt-4">

@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type { IGif } from "@giphy/js-types";
 
 interface SearchResultsProps {
-  searchResults: IGif[] | Error | undefined;
+  searchResults: IGif[] | Error;
   isTrending?: boolean;
   onItemClick: (item: IGif) => void;
 }
@@ -25,7 +25,7 @@ const SearchResults: FC<SearchResultsProps> = ({
             Trending
           </h2>
         )}
-        {searchResults?.length === 0 ? (
+        {searchResults && searchResults.length === 0 ? (
           <p className="text-neutral text-center mt-4">Nothing found</p>
         ) : (
           <ul className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-2 items-center">
@@ -39,7 +39,7 @@ const SearchResults: FC<SearchResultsProps> = ({
                       width={item.images.fixed_height.width}
                       height={item.images.fixed_height.height}
                       alt={item.alt_text}
-                      className="inline"
+                      className="inline rounded"
                       loading="lazy"
                     />
                   </button>

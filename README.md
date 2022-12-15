@@ -77,6 +77,5 @@ Pre-commit checks
 
 ## Next steps
 
-- Create BE server to store the API key, not to expose it to the internet and cache the fetched data. [Firebase functions](https://firebase.google.com/docs/functions) or [AWS lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) should be enough.
 - Improve the error handling and connect the [TrackJS](https://trackjs.com) or [Sentry IO](http://sentry.io)
 - Set up CI / CD process. For example, using (GitHub Actions)[https://github.com/features/actions] or [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/)

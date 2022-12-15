@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useRef, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import type { IGif } from "@giphy/js-types";
 import { useDebounce } from "../../hooks/useDebounce";
@@ -13,86 +13,56 @@ import { Search } from "./Search";
  * @returns React component
  */
 const SearchApp: FC = () => {
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>();
   const debouncedSearchQuery = useDebounce(searchQuery, 1000);
   const [fetchTrending, fetchSearchResults] = useGiphy();
-  const [isLoading, setIsLoading] = useState(true);
   const [trending, setTrending] = useState<Error | IGif[]>();
   const [searchResults, setSearchResults] = useState<Error | IGif[]>();
-  const [selectedGif, setSelectedGif] = useState<IGif>();
-  const [isGifInfoModalOpen, setIsGifInfoModalOpen] = useState(false);
 
-  const showGifInfo = (item: IGif) => {
-    setSelectedGif(item);
-    setIsGifInfoModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsGifInfoModalOpen(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", closeModal, false);
-
-    return () => {
-      document.removeEventListener("keydown", closeModal, false);
-    };
-  }, []);
-
-  useEffect(() => {
-    searchInputRef.current?.focus();
-
-    const getTrending = async () => {
+  const getTrending = useCallback(async () => {
+    if (!trending) {
       setTrending(await fetchTrending());
-      setIsLoading(false);
-    };
-
-    getTrending();
-  }, [fetchTrending]);
+    }
+  }, [fetchTrending, trending]);
 
   useEffect(() => {
-    const searchQueryFromUrl = searchParams.get("q");
-    if (searchQueryFromUrl) {
-      setSearchQuery(searchQueryFromUrl);
-    }
+    setSearchQuery(searchParams.get("q") || "");
   }, [searchParams]);
 
   useEffect(() => {
-    setSearchParams({ q: searchQuery });
+    if (searchQuery !== undefined) {
+      setSearchParams({ q: searchQuery });
+    }
   }, [searchQuery, setSearchParams]);
 
   useEffect(() => {
-    if (!debouncedSearchQuery) {
-      setSearchResults(trending);
-      setIsLoading(false);
-
-      return;
-    }
-
     const getSearchResults = async () => {
-      setIsLoading(true);
       setSearchResults(undefined);
-      setSearchResults(await fetchSearchResults(debouncedSearchQuery));
-      setIsLoading(false);
+
+      if (searchQuery === "") {
+        await getTrending();
+        setSearchResults(trending);
+      } else if (debouncedSearchQuery && searchQuery === debouncedSearchQuery) {
+        setSearchResults(await fetchSearchResults(debouncedSearchQuery));
+      }
     };
 
     getSearchResults();
-  }, [debouncedSearchQuery, fetchSearchResults, trending]);
+  }, [
+    debouncedSearchQuery,
+    fetchSearchResults,
+    getTrending,
+    searchQuery,
+    trending,
+  ]);
 
   return (
     <Search
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query)}
-      isLoading={isLoading}
       searchResults={searchResults}
-      showGifInfo={showGifInfo}
-      selectedGif={selectedGif}
-      isTrending={debouncedSearchQuery.length === 0}
-      searchInputRef={searchInputRef}
-      isGifInfoModalOpen={isGifInfoModalOpen}
-      closeModal={closeModal}
+      isTrending={searchQuery?.length === 0}
     />
   );
 };
