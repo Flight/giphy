@@ -47,7 +47,9 @@ const useGiphy = () => {
     async (searchQuery: string): Promise<IGif[] | Error> => {
       try {
         const trendingResponse = await fetch(
-          `${GIPHY_API_URL}search?q=${searchQuery}&api_key=${VITE_GIPHY_API_KEY}&limit=${GIPHY_API_LIMIT}`
+          `${GIPHY_API_URL}search?q=${encodeURIComponent(
+            searchQuery
+          )}&api_key=${VITE_GIPHY_API_KEY}&limit=${GIPHY_API_LIMIT}`
         );
 
         if (!trendingResponse.ok) {

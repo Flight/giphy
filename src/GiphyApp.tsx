@@ -22,6 +22,15 @@ const GiphyApp = () => (
       Find your perfect gif
     </h1>
     <RouterProvider router={router} />
+    <a href="http://giphy.com" target="_blank" rel="noreferrer">
+      <img
+        alt="Powered by GIPHY"
+        src="public/images/Poweredby_100px-White_VertLogo.png"
+        width={101}
+        height={36}
+        className="block mx-auto mt-4"
+      />
+    </a>
   </div>
 );
 
