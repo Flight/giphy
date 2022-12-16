@@ -15,7 +15,8 @@
 3. Install the dependencies
    `pnpm install`
 
-4. Create `.env.local` file in the project root folder with your API key for https://developers.giphy.com/dashboard/?create=true
+4. Create `.env.local` file in the project root folder with your [GIPHY API key](https://developers.giphy.com/dashboard/?create=true)
+
    `VITE_GIPHY_API_KEY=YOUR_KEY`
 
 ## Running
