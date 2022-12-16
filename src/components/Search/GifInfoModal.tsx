@@ -20,7 +20,7 @@ const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
   <>
     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
     <div
-      id="gif-info"
+      data-testid="gif-info"
       className="modal modal-bottom sm:modal-middle modal-open"
       onClick={(clickEvent) => {
         if (clickEvent.target === clickEvent.currentTarget) {

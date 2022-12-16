@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import type { IGif } from "@giphy/js-types";
 import { Search as SearchComponent } from "../components/Search/Search";
 import type { SearchProps } from "../components/Search/Search";
-import { sampleSearchResults } from "./sampleSearchResults";
+import { sampleSearchResults } from "../dummyData/sampleSearchResults";
 
 const meta: Meta<typeof SearchComponent> = {
   title: "Components/Search",

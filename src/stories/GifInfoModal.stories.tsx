@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import type { IGif } from "@giphy/js-types";
 import { GifInfoModal as GifInfoModalComponent } from "../components/Search/GifInfoModal";
 import type { GifInfoModalProps } from "../components/Search/GifInfoModal";
-import { sampleSearchResults } from "./sampleSearchResults";
+import { sampleSearchResults } from "../dummyData/sampleSearchResults";
 
 const meta: Meta<typeof GifInfoModalComponent> = {
   title: "Components/GifInfoModal",
