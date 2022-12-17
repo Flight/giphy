@@ -8,7 +8,7 @@ beforeEach(() => {
 });
 
 it("Renders initial page with trending results", () => {
-  cy.visit("http://localhost:4173/");
+  cy.visit("/");
 
   cy.findByRole("heading", {
     level: 1,
@@ -35,7 +35,7 @@ it("Renders initial page with trending results", () => {
 });
 
 it("Renders the page with search query results", () => {
-  cy.visit("http://localhost:4173/?q=nice");
+  cy.visit("/?q=nice");
 
   cy.findByRole("searchbox", {
     name: "Search all the GIFs",
