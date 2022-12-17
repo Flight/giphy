@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite --open",
+    "start:silent": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview --open",
     "test": "vitest",

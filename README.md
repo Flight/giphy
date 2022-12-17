@@ -62,6 +62,31 @@ or
 Pre-commit checks
 `pnpm pre-commit`
 
+## Running in Docker:
+
+1. Install [Docker Desktop](https://www.docker.com).
+
+2. Create `.env.local` file in the project root folder with your [GIPHY API key](https://developers.giphy.com/dashboard/?create=true)
+
+   `VITE_GIPHY_API_KEY=YOUR_KEY`
+
+3. Run docker compose:
+
+   `docker-compose up`
+
+Navigate to the exposed urls:
+
+- Main app: [http://localhost:5173/](http://localhost:5173/)
+- Storybook: [http://localhost:6006/](http://localhost:6006/)
+
+To run the tests inside of the container, first connect to it:
+
+`docker exec -it giphy-frontend-1 "bash"`
+
+Then run the needed commands like:
+
+`pnpm test:silent`
+
 ## Design decisions
 
 - [Tailwind CSS](https://tailwindcss.com) + [PostCSS](http://postcss.org) for tree-shakable utility classes and minimum amount of hand-written CSS
