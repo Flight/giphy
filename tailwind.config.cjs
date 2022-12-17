@@ -5,4 +5,7 @@ const daisyui = require("daisyui");
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   plugins: [lineClamp, daisyui],
+  daisyui: {
+    themes: false,
+  },
 };
