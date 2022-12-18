@@ -113,3 +113,5 @@ Then run the needed commands like:
 - Improve test coverage
 - Improve the error handling and connect the [TrackJS](https://trackjs.com) or [Sentry IO](http://sentry.io)
 - Set up CI / CD process. For example, using [GitHub Actions](https://github.com/features/actions) or [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/)
+
+![Giphy search app](screenshots/modal.png?raw=true)

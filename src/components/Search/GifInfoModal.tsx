@@ -40,7 +40,7 @@ const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
             className="block mx-auto max-w-full rounded"
           />
 
-          <div className="flex items-center mt-4">
+          <label className="input-group mt-4">
             <input
               type="text"
               id="input-gif"
@@ -48,36 +48,28 @@ const GifInfoModal: FC<GifInfoModalProps> = ({ gif, onClose }) => (
               className="input input-bordered w-full input-sm"
               readOnly
             />
-            <label className="w-14 text-center" htmlFor="input-gif">
-              <span className="label-text">GIF</span>
-            </label>
-          </div>
+            <span>GIF</span>
+          </label>
 
-          <div className="flex items-center mt-4">
+          <label className="input-group mt-4">
             <input
               type="text"
-              id="input-webp"
               value={gif.images.original.webp}
               className="input input-bordered w-full input-sm"
               readOnly
             />
-            <label className="w-14 text-center" htmlFor="input-webp">
-              <span className="label-text">WebP</span>
-            </label>
-          </div>
+            <span>WebP</span>
+          </label>
 
-          <div className="flex items-center mt-4">
+          <label className="input-group mt-4">
             <input
               type="text"
-              id="input-mp4"
               value={gif.images.original.mp4}
               className="input input-bordered w-full input-sm"
               readOnly
             />
-            <label className="w-14 text-center" htmlFor="input-mp4">
-              <span className="label-text">MP4</span>
-            </label>
-          </div>
+            <span>MP4</span>
+          </label>
         </div>
       </div>
     </div>
