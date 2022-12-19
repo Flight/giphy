@@ -30,7 +30,7 @@ const GiphyApp = () => (
     <a href="http://giphy.com" target="_blank" rel="noreferrer">
       <img
         alt="Powered by GIPHY"
-        src="/images/Poweredby_100px-White_VertLogo.png"
+        src="images/Poweredby_100px-White_VertLogo.png"
         width={101}
         height={36}
         className="block mx-auto mt-4"
